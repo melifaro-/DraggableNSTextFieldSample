@@ -41,7 +41,7 @@ class ViewController: NSViewController {
         let y = CGFloat(rand() % Int32((viewHeight - textFieldHeight)))
         
         let textField = SelectableTextField(frame: CGRectMake(x, y, textFieldWidth, textFieldHeight))
-        textField.didSelected = didTextFieldSelectCallback
+        textField.didSelectCallback = didTextFieldSelectCallback
         self.view.addSubview(textField)
         
         return textField

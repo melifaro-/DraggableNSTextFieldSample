@@ -5,10 +5,10 @@ typealias TextFieldDidSelect = (textField: SelectableTextField) -> Void
 
 class SelectableTextField: NSTextField {
     
-    var didSelected: (TextFieldDidSelect)?
+    var didSelectCallback: (TextFieldDidSelect)?
     
     override func mouseDown(theEvent: NSEvent) {
         super.mouseDown(theEvent)
-        didSelected?(textField: self)
+        didSelectCallback?(textField: self)
     }
 }
