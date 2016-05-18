@@ -3,7 +3,7 @@ import Cocoa
 class ViewController: NSViewController {
 
     let textFieldWidth: CGFloat = 100
-    let textFieldHeight: CGFloat = 22
+    let textFieldHeight: CGFloat = 30
     
     var currentTextField: SelectableTextField!
     var didTextFieldSelectCallback: TextFieldDidSelect!
@@ -18,7 +18,7 @@ class ViewController: NSViewController {
         addTextFieldAtRandomePlace()
         addTextFieldAtRandomePlace()
         
-        didTextFieldSelectCallback(textField: addTextFieldAtRandomePlace())
+//        didTextFieldSelectCallback(textField: addTextFieldAtRandomePlace())
     }
 
     override func mouseDragged(theEvent: NSEvent) {
@@ -32,7 +32,7 @@ class ViewController: NSViewController {
         textField.frame.origin.y -= theEvent.deltaY
     }
     
-    private func addTextFieldAtRandomePlace() -> SelectableTextField {
+    private func addTextFieldAtRandomePlace() -> NSButton {
         
         let viewWidth = self.view.bounds.size.width
         let viewHeight = self.view.bounds.size.height
@@ -40,11 +40,12 @@ class ViewController: NSViewController {
         let x = CGFloat(rand() % Int32((viewWidth - textFieldWidth)))
         let y = CGFloat(rand() % Int32((viewHeight - textFieldHeight)))
         
-        let textField = SelectableTextField(frame: CGRectMake(x, y, textFieldWidth, textFieldHeight))
-        textField.didSelectCallback = didTextFieldSelectCallback
-        self.view.addSubview(textField)
+        let button = NSButton(frame: CGRectMake(x, y, textFieldWidth, textFieldHeight))
+        button.alignment = NSCenterTextAlignment
+        button.bezelStyle = NSBezelStyle.RoundedBezelStyle
+        self.view.addSubview(button)
         
-        return textField
+        return button
     }
 }
 

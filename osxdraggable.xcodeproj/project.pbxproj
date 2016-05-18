@@ -12,6 +12,7 @@
 		531736AF1CE300C700511D9D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 531736AE1CE300C700511D9D /* Assets.xcassets */; };
 		531736B21CE300C700511D9D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 531736B01CE300C700511D9D /* Main.storyboard */; };
 		531736BA1CE3025C00511D9D /* SelectableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531736B91CE3025C00511D9D /* SelectableTextField.swift */; };
+		538F77A41CEC41CC00064898 /* DraggableButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 538F77A31CEC41CC00064898 /* DraggableButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,9 @@
 		531736B11CE300C700511D9D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		531736B31CE300C700511D9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		531736B91CE3025C00511D9D /* SelectableTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectableTextField.swift; sourceTree = "<group>"; };
+		538F77A11CEC41CC00064898 /* osxdraggable-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "osxdraggable-Bridging-Header.h"; sourceTree = "<group>"; };
+		538F77A21CEC41CC00064898 /* DraggableButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DraggableButton.h; sourceTree = "<group>"; };
+		538F77A31CEC41CC00064898 /* DraggableButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DraggableButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,12 +58,15 @@
 		531736A91CE300C700511D9D /* osxdraggable */ = {
 			isa = PBXGroup;
 			children = (
+				538F77A21CEC41CC00064898 /* DraggableButton.h */,
+				538F77A31CEC41CC00064898 /* DraggableButton.m */,
 				531736AA1CE300C700511D9D /* AppDelegate.swift */,
 				531736AC1CE300C700511D9D /* ViewController.swift */,
 				531736B91CE3025C00511D9D /* SelectableTextField.swift */,
 				531736AE1CE300C700511D9D /* Assets.xcassets */,
 				531736B01CE300C700511D9D /* Main.storyboard */,
 				531736B31CE300C700511D9D /* Info.plist */,
+				538F77A11CEC41CC00064898 /* osxdraggable-Bridging-Header.h */,
 			);
 			path = osxdraggable;
 			sourceTree = "<group>";
@@ -135,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				531736AD1CE300C700511D9D /* ViewController.swift in Sources */,
+				538F77A41CEC41CC00064898 /* DraggableButton.m in Sources */,
 				531736AB1CE300C700511D9D /* AppDelegate.swift in Sources */,
 				531736BA1CE3025C00511D9D /* SelectableTextField.swift in Sources */,
 			);
@@ -240,11 +248,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = osxdraggable/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.IB.osxdraggable;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "osxdraggable/osxdraggable-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -252,11 +263,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = osxdraggable/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.IB.osxdraggable;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "osxdraggable/osxdraggable-Bridging-Header.h";
 			};
 			name = Release;
 		};
